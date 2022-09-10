@@ -1,0 +1,82 @@
+<!-- <p>book flights</p> -->
+<div class="book-container">
+        <div class="book-form-content">
+                <form [formGroup]="flightSearchForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                                <!-- <label for="TripType">Trip :</label> -->
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <input id="singleTrip" type="radio" value="1" name="tripType"
+                                                        formControlName="tripType" (change)="changeTripType($event)">
+                                                <!--(change)="changeGender($event)"-->
+                                                <label for="singleTrip">Single Trip</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <input id="roundTrip" type="radio" value="2" name="tripType"
+                                                        formControlName="tripType"(change)="changeTripType($event)">
+                                                <!--(change)="changeGender($event)"-->
+                                                <label class="ml-2" for="roundTrip">Round Trip</label>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                                <div class="row travel-path">
+                                        <div class="col-md-6">
+                                                <!-- <select class="custom-select" formControlName="sourcePlace">
+                                                 
+                                                    <option *ngFor="let airport of airportList" value="{{airport.airportId}}">{{airport.city}}</option>
+                                                    
+                                            </select> -->
+                                                <mat-form-field>
+                                                        <mat-label>From</mat-label>
+                                                        <input matInput type="text" [matAutocomplete]="auto"
+                                                                formControlName="sourcePlace">
+                                                        <mat-autocomplete #auto="matAutocomplete">
+                                                                <mat-option *ngFor="let airport of airportList" [value]="airport.city">
+                                                                        {{airport.city}}
+                                                                </mat-option>
+                                                        </mat-autocomplete>
+                                                </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                                        <mat-form-field>
+                                                                <mat-label>To</mat-label>
+                                                                <input matInput type="text" [matAutocomplete]="auto"
+                                                                        formControlName="destinationPlace">
+                                                                <mat-autocomplete #auto="matAutocomplete">
+                                                                        <mat-option *ngFor="let airport of airportList" [value]="airport.city">
+                                                                                {{airport.city}}
+                                                                        </mat-option>
+                                                                </mat-autocomplete>
+                                                        </mat-form-field>
+        
+                                        </div>
+
+
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <mat-form-field>
+                                                        <input matInput [matDatepicker]="depaturepicker"
+                                                                formControlName="departureDate" placeholder="Depature On">
+                                                        <mat-datepicker-toggle matSuffix [for]="depaturepicker"></mat-datepicker-toggle>
+                                                        <mat-datepicker #depaturepicker></mat-datepicker>
+                                                </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                                        <mat-form-field class="ml-1 form-group">
+                                                                <input [disabled]="!this.isEnableReturnDate" matInput [matDatepicker]="returnpicker" placeholder="Return On"
+                                                                        formControlName="returnDate"><!--[disabled]="this.isEnableReturnDate"-->
+                                                                <mat-datepicker-toggle matSuffix [for]="returnpicker"></mat-datepicker-toggle>
+                                                                <mat-datepicker #returnpicker></mat-datepicker>
+                                                        </mat-form-field>
+                                        </div>
+                                </div>
+                        </div>
+                        <button type="submit" class="btn btn-info search-button-color">Search</button>
+                </form>
+        </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="manageFlightBody">
+    <div class="manageFlightContainer">
+        <table class="table">
+            <thead>
+                <tr class = "headerStyle">
+                    <th>Name</th>
+                    <!-- <th>Passanger Id</th> -->
+                    <th>Email</th>
+                    <th>Airline</th>
+                    <th>Flight Code</th>
+                    <th>departurePNR</th>
+                    <th>ReturnPNR</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Price</th>
+                    <!-- <th>Depature Date</th>
+                    <th>Return Date</th> -->
+                    <!-- <th>Action</th> -->
+                </tr>
+             </thead>
+             <tbody>
+                    <tr *ngFor="let flight of flightData" class="contentStyle" >
+                       
+                        <td>{{flight.name}}</td>
+                        <!-- <td>{{flight.passengerId}}</td> -->
+                        <td>{{flight.email}}</td>
+                        <td>{{flight.airlineName}}</td>
+                        <td>{{flight.flightCode}}</td>
+                        <td>{{flight.departurePNR}}</td>
+                        <td>{{flight.returnPNR}}</td>
+                        <td>{{flight.sourcePlace}}</td>
+                        <td>{{flight.destinationPlace}}</td>
+                        <td>{{flight.price}}</td> 
+                       
+                    </tr>
+                </tbody>
+           </table>
+        </div>
+</div>

@@ -1,0 +1,28 @@
+.manageFlightContainer{
+    box-shadow: 5px 10px 20px  rgb(112, 100, 72);
+        border: 1px solid rgb(252, 186, 63);
+        padding: 30px;
+}
+button{
+    padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px 5px;
+    background-color: blue;
+    font-size: medium;
+    color: white;
+    box-shadow: 10px 20px 50px white;
+}
+th{
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+.headerStyle{
+    color: rgb(235, 142, 29)
+}
+.contentStyle{
+    color: rgb(15, 94, 211)
+}

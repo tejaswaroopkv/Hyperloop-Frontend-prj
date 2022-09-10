@@ -1,0 +1,90 @@
+<div class = "container-fluid schedule-form">
+    <div class = "row">
+        <!-- <div class="schedule-airline-container">
+          <div class="schedule-airline-form-content"> -->
+            <form [formGroup]="scheduleFlightForm" (ngSubmit)="onSubmit()">
+                <div class = "container-fluid ">
+                        <div class = "row ">
+                            <!-- <div class="scheduleFlightFormStyle"> -->
+                                    <div class = "col-md-3">
+                                            <mat-form-field appearance="fill">
+                                                    <mat-label>Choose Airline</mat-label>
+                                                    <mat-select (selectionChange)="onAirlineChange()" formControlName="airlineid" >
+                                                      <mat-option *ngFor="let airline of airlineInfo" value="{{airline.value}}">{{airline.label}}</mat-option>
+                        
+                                                    </mat-select>
+                                                  </mat-form-field>
+                                    </div>
+                                    <div class = "col-md-3">
+                                    <mat-form-field appearance="fill">
+                                                    <mat-label>Choose Flight Code</mat-label>
+                                                    <mat-select  formControlName="flightcode" >
+                                                      <mat-option *ngFor="let flightcode of this.flightcodeOptions" value="{{flightcode.value}}">{{flightcode.label}}</mat-option>
+                        
+                                                    </mat-select>
+                                                  </mat-form-field>
+                                    </div>
+                                    <div class = "col-md-3">
+                                            <mat-form-field appearance="fill">
+                                                    <mat-label>Source Place</mat-label>
+                                                    <mat-select  formControlName="srcid" >
+                                                      <mat-option *ngFor="let airport of this.airportData" value="{{airport.airportId}}">{{airport.city}}</mat-option>
+                                                    </mat-select>
+                                                  </mat-form-field>
+                                    </div>
+                                    <div class = "col-md-3">
+                                            <mat-form-field appearance="fill">
+                                                    <mat-label>Destination Place</mat-label>
+                                                    <mat-select  formControlName="destid" >
+                                                      <mat-option *ngFor="let airport of this.airportData" value="{{airport.airportId}}">{{airport.city}}</mat-option>
+                                                    </mat-select>
+                                                  </mat-form-field>
+                                    </div> 
+                            <!-- </div> -->
+                                                     
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+
+                                    <mat-form-field>
+                                            <input matInput [matDatepicker]="depaturepicker"
+                                                    formControlName="departureDate" placeholder="Depature On">
+                                            <mat-datepicker-toggle matSuffix [for]="depaturepicker"></mat-datepicker-toggle>
+                                            <mat-datepicker #depaturepicker></mat-datepicker>
+                                    </mat-form-field>
+                            </div>
+                            <div class="col-md-3">
+                                            <mat-form-field class="form-group">
+                                                    <input matInput [matDatepicker]="returnpicker" placeholder="Return On"
+                                                            formControlName="returnDate"><!--[disabled]="this.isEnableReturnDate"-->
+                                                    <mat-datepicker-toggle matSuffix [for]="returnpicker"></mat-datepicker-toggle>
+                                                    <mat-datepicker #returnpicker></mat-datepicker>
+                                            </mat-form-field>
+                            </div>
+                            <div class="col-md-3">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                            <mat-label>Enter Price</mat-label>
+                                            <input matInput placeholder="'X' $"value="0$" formControlName="price">
+                                    </mat-form-field>
+                            </div>
+                            <div class="col-md-3">
+                                <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Enter Seats</mat-label>
+                                        <input matInput placeholder="'X'"value="0" formControlName="totalSeats">
+                                </mat-form-field>
+                             </div>
+                             <input type="hidden" id="isAvailable" name="isAvailable" formControlName = "isAvailable" value="true">
+
+                        </div>
+                        <div class = "row button-position">
+                                    <button type="submit" class="btn btn-info submit-button-color">Schedule Flight</button>
+                        </div>
+                </div>
+           
+
+        </form>
+      <!-- </div>
+    </div> -->
+ </div>
+
+</div>

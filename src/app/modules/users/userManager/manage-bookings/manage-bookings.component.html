@@ -1,0 +1,77 @@
+<div  *ngIf = "!isSearched"class="book-container">
+        <div class="book-form-content">
+                <form [formGroup]="manageBookingForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <input id="singleTrip" type="radio" value="1" name="tripType"
+                                                        formControlName="tripType" (change)="changeTripType($event)">
+                                                <!--(change)="changeGender($event)"-->
+                                                <label for="singleTrip">Single Trip</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <input id="roundTrip" type="radio" value="2" name="tripType"
+                                                        formControlName="tripType"(change)="changeTripType($event)">
+                                                <!--(change)="changeGender($event)"-->
+                                                <label class="ml-2" for="roundTrip">Round Trip</label>
+                                        </div>
+                                </div>
+                                <div class = "row">
+                                        <div class="col-md-4">
+                                                <mat-form-field class="example-full-width" appearance="fill">
+                                                        <mat-label>Enter PNR</mat-label>
+                                                        <input matInput placeholder="Depature/Return on trip"value="" formControlName="PNRNumber">
+                                                </mat-form-field>
+                                        </div>
+                                </div>
+                                <button type="submit" class="btn btn-info submit-button-color">Search</button>
+                        </div>
+                    </form>
+        </div>
+</div>
+<div *ngIf = "isSearched"class="manageFlightBody">
+        <div class="manageFlightContainer">
+            <table class="table">
+                <thead>
+                    <tr class = "headerStyle">
+                        <th>Name</th>
+                        <th>Passanger Id</th>
+                        <th>Email</th>
+                        <th>Airline</th>
+                        <th>Flight Code</th>
+                        <th>departurePNR</th>
+                        <th>ReturnPNR</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Price</th>
+                        <!-- <th>Depature Date</th>
+                        <th>Return Date</th> -->
+                        <th>Action</th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                        <tr *ngFor="let flight of flightData['data']"  [class.highlighter]="flight.isCanceled" [class.available]="!flight.isCanceled">
+                            <!-- <td><img class="logo" src="{{flight.logoUrl}}" alt="FlywayLogo" width="25" height="25"></td> -->
+                            <td>{{flight.name}}</td><!--*ngFor="let flight of flightData"-->
+                            <td>{{flight.passengerId}}</td>
+                            <td>{{flight.email}}</td>
+                            <td>{{flight.airlineName}}</td>
+                            <td>{{flight.flightCode}}</td>
+                            <td>{{flight.departurePNR}}</td>
+                            <td>{{flight.returnPNR}}</td>
+                            <td>{{flight.sourcePlace}}</td>
+                            <td>{{flight.destinationPlace}}</td>
+                            <td>{{flight.price}}</td> 
+                            
+                           
+                          
+                            <td>
+                                <button style="margin-left: 5px;" [disabled]="flight.isCanceled" 
+                                (click)="deleteScheduledFlight(flight)" [class.highlighterButton]="flight.isCanceled">Cancel</button>
+                            </td>
+                        </tr>
+                    </tbody>
+               </table>
+            </div>
+    </div>
+    

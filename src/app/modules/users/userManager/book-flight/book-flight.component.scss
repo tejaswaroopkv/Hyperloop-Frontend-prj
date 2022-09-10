@@ -1,0 +1,82 @@
+.book-container{
+    margin-left: 30%;
+    margin-right: 30%;
+    position: relative;
+    top: 20%;
+    height: 550px;
+}
+
+.book-form-content{
+    box-shadow: 5px 10px 20px rgb(255, 208, 0);
+    border: 1px solid rgb(218, 207, 57);
+    padding: 25px;
+    opacity: 50;
+   
+}
+.travel-path{
+    margin-top: 20px;
+    padding: 5px;
+}
+
+
+.search-button-color{
+margin-left: 40%;
+background-color: #0061A8;
+border-radius: 5px 5px;
+color: white;
+box-shadow: 5px 10px 20px black;
+}
+
+.manageFlightBody {
+    position: relative;
+    top: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.manageFlightContainer{
+    box-shadow: 5px 10px 20px  rgb(112, 100, 72);
+        border: 1px solid rgb(252, 186, 63);
+        padding: 50px;
+}
+
+.highlighter{
+    border: 1px solid black;
+    background-color: red;
+    color: white;
+    font-size: medium;
+}
+
+button{
+    padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px 5px;
+    background-color: blue;
+    font-size: medium;
+    color: white;
+    box-shadow: 10px 20px 50px white;
+}
+
+.highlighterButton{
+    background-color: black;
+    color: white;
+}
+
+.available{
+    background-color: rgb(231, 184, 114);
+    color: white;
+    font-size: medium;
+    border: 1px solid black;
+}
+
+th{
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+.headerStyle{
+    color: rgb(243, 173, 88)
+}

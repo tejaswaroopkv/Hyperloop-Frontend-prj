@@ -1,0 +1,36 @@
+{
+    "data":[
+        {
+            "columnName":"name",
+            "type":"text",
+            "displayName":"Name"
+            
+        },
+        {
+            "columnName":"age",
+            "type":"text",
+            "displayName":"Age"
+            
+        },
+        {
+            "columnName":"email",
+            "type":"text",
+            "displayName":"Email"
+            
+        },
+        {
+            "columnName":"contact",
+            "type":"text",
+            "displayName":"Mobile"
+            
+        },
+        {
+            "columnName":"primary",
+            "type":"boolean",
+            "displayName":"Is Primary"
+            
+        }
+
+        
+    ]
+}

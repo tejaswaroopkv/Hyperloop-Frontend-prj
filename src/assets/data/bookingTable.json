@@ -1,0 +1,25 @@
+{
+    "data" :[ 
+            {
+            "columnName":"logoUrl",
+            "type":"image",
+            "displayName":"Logo"
+            },
+            {
+                "columnName":"airlineName",
+                "type":"text",
+                "displayName":"Airline Name"
+            },
+            {
+                    "columnName":"departureDate",
+                    "type":"text",
+                    "displayName":"Fly Date"
+            },
+            {
+                "columnName":"price",
+                "type":"text",
+                "displayName":"Price"
+           }
+
+        ]
+}

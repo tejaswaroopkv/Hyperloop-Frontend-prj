@@ -1,0 +1,28 @@
+.book-airline-container{
+    margin-left: 20%;
+    margin-right: 20%;
+    position: relative;
+    top: 20%;
+}
+
+.book-airline-form-content{
+    box-shadow: 5px 10px 20px rgb(255, 208, 0);
+    border: 1px solid rgb(218, 207, 57);
+    padding: 25px;
+    opacity: 5;
+   
+}
+
+.add-button-color{
+    margin-left: 40%;
+    background-color: #0061A8;
+    border-radius: 5px 5px;
+    color: white;
+    box-shadow: 5px 10px 20px black;
+    }
+    mat-form-field {
+        /*change color of label*/
+        color: rgb(80, 126, 194) !important;
+       }
+      
+    

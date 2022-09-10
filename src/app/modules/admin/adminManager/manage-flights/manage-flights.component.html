@@ -1,0 +1,39 @@
+<div class="manageFlightBody">
+    <div class="manageFlightContainer">
+        <table class="table">
+            <thead>
+                <tr class = "headerStyle">
+                    <th>Logo</th>
+                    <th>Airline Name</th>
+                    <th>Flight Code</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Price</th>
+                    <th>Depature Date</th>
+                    <th>Return Date</th>
+                    <th>Total Seats</th>
+                    <th>Action</th>
+                </tr>
+             </thead>
+             <tbody>
+                    <tr *ngFor="let flight of flightData"  [class.highlighter]="!flight.isAvailable" [class.available]="flight.isAvailable">
+                        <td><img class="logo" src="{{flight.logoUrl}}" alt="FlywayLogo" width="25" height="25"></td>
+                        <td>{{flight.airlineName}}</td>
+                        <td>{{flight.flightCode}}</td>
+                        <td>{{flight.sourcePlace}}</td>
+                        <td>{{flight.destinationPlace}}</td>
+                        <td>{{flight.price}}</td>
+                        <td>{{flight.departureDate}}</td>
+                        <td>{{flight.returnDate}}</td>
+                        <td>{{flight.totalSeats}}</td>
+                        <!-- <td>{{flight.aTime}}</td>
+                        <td>{{flight.totalSeats}}</td> -->
+                        <td>
+                            <button style="margin-left: 5px;" [disabled]="!flight.isAvailable" 
+                            (click)="deleteScheduledFlight(flight)" [class.highlighterButton]="!flight.isAvailable">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+           </table>
+        </div>
+</div>
